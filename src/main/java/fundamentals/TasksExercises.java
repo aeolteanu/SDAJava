@@ -205,6 +205,47 @@ public class TasksExercises {
 
 
     }
+    //Write an application that will read texts (variables of the String type) until the user gives the text "Enough!"
+    // and then writes the longest of the given texts (not including the text "Enough!").
+    // If the user does not provide any text, write "No text provided".
+
+    public static void longestWord() {
+        System.out.println("Type your word: ");
+        Scanner scanner = new Scanner(System.in);
+        String word = "";
+        String longestWord1 = "";
+        do {
+            word = scanner.next();
+            if ( !word.equals("Enough") && longestWord1.length() < word.length() ) {
+                longestWord1 = word;
+            }
+        } while (!word.equals("Enough"));
+        if (longestWord1.length() == 0) {
+            System.out.println("No text provided");
+            return;
+        }
+        System.out.println("Longest word is: " + longestWord1);
+    }
+
+    public static void longestWord2() {
+        System.out.println("Type your word: ");
+        Scanner scanner = new Scanner(System.in);
+        String word = "";
+        String longestWord1 = "";
+        while (!word.equals("Enough")) {
+            if ( longestWord1.length() < word.length() ) {
+                longestWord1 = word;
+            }
+            word = scanner.next();
+        }
+        if (longestWord1.length() == 0) {
+            System.out.println("No text provided");
+            return;
+        }
+        System.out.println("Longest word is: " + longestWord1);
+    }
+
+
 }
 
 
