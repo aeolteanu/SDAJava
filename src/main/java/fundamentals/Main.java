@@ -27,7 +27,10 @@ public class Main {
 //        tasksExercises1.ex1();
 //        tasksExercises1.ex2();
         tasksExercises1.ex3();
-        tasksExercises1.tooMuchTooLittle();
+//        tasksExercises1.tooMuchTooLittle();
+//        tasksExercises1.printAllPrimeNumbers();
+        tasksExercises1.FizzBuzz1();
+
 
 
     }

@@ -64,24 +64,52 @@ public class TasksExercises {
 
         int a = scanner.nextInt();
         for (int x = 1; x < a; x++) {
-            System.out.println(x);
+            if (a%21==0) {
+                System.out.println("FizzBuz");
+            } else if (a % 3 == 0) {
+                System.out.println("fizz");
+            } else if (a % 7 == 0) {
+                System.out.println("buzz");
+            } else {
+                System.out.println(" Nici un numar nu este divizibil cu 3 sau 7");
+
+        }
 
         }
 
 
-        if ((a % 3 == 0) && (a % 7 == 0)) {
-            System.out.println("FizzBuz");
-        } else if (a % 3 == 0) {
-            System.out.println("fizz");
-        } else if (a % 7 == 0) {
-            System.out.println("buzz");
-        } else {
-            System.out.println(" Nici un numar nu este divizibil cu 3 sau 7");
-
-        }
 
 
     }
+
+    public static void FizzBuzz1() {
+        //Write an application that takes a positive number from the user (type int) and writes all
+        //numbers from 1 to the given number, each on the next line, with the following changes:
+        //● in place of numbers divisible by 3, instead of a number the program should print "Fizz"
+        //● in place of numbers divisible by 7, instead of a number the program should write
+        //"Buzz"
+        //● if the number is divisible by both 3 and 7, the program should print "Fizz buzz"
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduceti numarul: ");
+
+        int a = scanner.nextInt();
+        for (int x = 1; x <= a; x++) {
+            if (x % 21 == 0) {
+                System.out.println("FizzBuz");
+                continue;
+            }
+            if (x % 3 == 0) {
+                System.out.println("fizz");
+                continue;
+            }
+            if (x % 7 == 0) {
+                System.out.println("buzz");
+                continue;
+            }
+
+        }
+    }
+
 
     public static void tooMuchTooLittle() {
         Scanner scanner = new Scanner(System.in);
@@ -99,7 +127,71 @@ public class TasksExercises {
         } while (b == a);
 
     }
+    //write an application that takes a positive number from the user
+    //and prints all prime numbers than 1 and less than given number
+
+    public static void printAllPrimeNumbers() {
+        System.out.println("Type a number: ");
+        Scanner scanner = new Scanner(System.in);
+        int number = scanner.nextInt();
+        if (number <= 1) {
+            System.out.println("The number is not greater than 1");
+            return;
+        }
+        for (int i = 2; i < number; i++) {
+            if (isPrime(i)) {
+                System.out.println(i);
+
+
+            }
+        }
+
+    }
+
+    private static boolean isPrime(int nr) {
+        for (int i = 2; i < nr / 2; i++) {
+            int rest = nr % i;
+            if (rest == 0) {
+                return false;
+
+
+            }
+        }
+        return true;
+    }
+
+    private static boolean isPrime1(int nr) {
+        boolean isPrimeNo = true;
+        for (int i = 2; i < nr / 2; i++) {
+            if (nr % i == 0) {
+                isPrimeNo = false;
+                break;
+
+            }
+        }
+
+        return isPrimeNo;
+
+    }
+
+    private static boolean isPrime2(int nr) {
+        boolean isPrimeNo = true;
+        for (int i = 2; i < nr / 2; i++) {
+            if (nr % i != 0) {
+                continue;
+
+            }
+            isPrimeNo = false;
+            break;
+
+        }
+
+        return isPrimeNo;
+
+
+    }
 }
+
 
 
 
