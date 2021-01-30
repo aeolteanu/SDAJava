@@ -64,7 +64,7 @@ public class TasksExercises {
 
         int a = scanner.nextInt();
         for (int x = 1; x < a; x++) {
-            if (a%21==0) {
+            if (a % 21 == 0) {
                 System.out.println("FizzBuz");
             } else if (a % 3 == 0) {
                 System.out.println("fizz");
@@ -73,11 +73,9 @@ public class TasksExercises {
             } else {
                 System.out.println(" Nici un numar nu este divizibil cu 3 sau 7");
 
-        }
+            }
 
         }
-
-
 
 
     }
@@ -173,6 +171,23 @@ public class TasksExercises {
         return isPrimeNo;
 
     }
+
+    private static boolean isPrime3(int nr) {
+        if (nr == 2) {
+            return true;
+        }
+        if (nr == 0 || nr == 1 || nr % 2 == 0) {
+            return false;
+        }
+        for (int i = 3; i * i <= nr; i += 2) {
+            if (nr % i == 0) {
+                return false;
+
+            }
+        }
+        return true;
+    }
+
 
     private static boolean isPrime2(int nr) {
         boolean isPrimeNo = true;
