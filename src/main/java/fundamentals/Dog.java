@@ -2,9 +2,11 @@ package fundamentals;
 
 public class Dog {
     private String name;
+    public int age;
 
     public Dog(String name){
         this.name= name;
+        this.age=age;
     }
 
     public void setName(String name) {

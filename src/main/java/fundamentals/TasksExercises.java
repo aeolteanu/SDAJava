@@ -280,6 +280,7 @@ public class TasksExercises {
         Dog dog1 = new Dog("Azorel");
 //        dog1.setName("Azorel");
 
+
         Dog dog2 = new Dog("Azorel");
 //        dog2.setName("Azorel");
 
