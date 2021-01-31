@@ -26,8 +26,14 @@ public class Main {
 
 //        tasksExercises1.ex1();
 //        tasksExercises1.ex2();
-        tasksExercises1.ex3();
-        tasksExercises1.tooMuchTooLittle();
+//        tasksExercises1.ex3();
+//        tasksExercises1.tooMuchTooLittle();
+//        tasksExercises1.printAllPrimeNumbers();
+//        tasksExercises1.FizzBuzz1();
+//        tasksExercises1.longestWord2();
+//        tasksExercises1.stutters();
+        tasksExercises1.testObjects();
+
 
 
     }
