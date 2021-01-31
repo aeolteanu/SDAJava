@@ -32,7 +32,7 @@ public class Main {
 //        tasksExercises1.FizzBuzz1();
 //        tasksExercises1.longestWord2();
 //        tasksExercises1.stutters();
-        tasksExercises1.testObjects();
+//        tasksExercises1.testObjects();
 
 
 
