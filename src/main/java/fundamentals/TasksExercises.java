@@ -1,5 +1,6 @@
 package fundamentals;
 
+import javax.sound.midi.Soundbank;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -216,7 +217,7 @@ public class TasksExercises {
         String longestWord1 = "";
         do {
             word = scanner.next();
-            if ( !word.equals("Enough") && longestWord1.length() < word.length() ) {
+            if (!word.equals("Enough") && longestWord1.length() < word.length()) {
                 longestWord1 = word;
             }
         } while (!word.equals("Enough"));
@@ -233,7 +234,7 @@ public class TasksExercises {
         String word = "";
         String longestWord1 = "";
         while (!word.equals("Enough")) {
-            if ( longestWord1.length() < word.length() ) {
+            if (longestWord1.length() < word.length()) {
                 longestWord1 = word;
             }
             word = scanner.next();
@@ -243,6 +244,49 @@ public class TasksExercises {
             return;
         }
         System.out.println("Longest word is: " + longestWord1);
+    }
+
+    public static void stutters() {
+        //Write an application that "stutters", that is, reads the user's text (type String), and prints
+        //the given text, in which each word is printed twice.
+        //For example, for the input: "This is my test" the application should print "This This is is
+        //my my test test".
+
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Type your word: ");
+
+        String text = scan.nextLine();
+        String[] words = text.split(" ");
+
+        System.out.print("Stutter: ");
+
+        for (int i = 0; i < words.length - 1; i++) {
+            System.out.print(words[i] + " " + words[i] + " ");
+        }
+        System.out.print(words[words.length - 1] + " " + words[words.length - 1]);
+    }
+
+
+    public static void testStrings() {
+        String s1 = "abc", s2 = "abc", s3 = new String("abc");
+        System.out.println(s1 == s2);
+        System.out.println(s1 == s3);
+        System.out.println(s1.equals(s3));
+
+
+    }
+
+    public void testObjects() {
+        Dog dog1 = new Dog("Azorel");
+//        dog1.setName("Azorel");
+
+        Dog dog2 = new Dog("Azorel");
+//        dog2.setName("Azorel");
+
+        System.out.println(dog1 == dog2);
+        System.out.println(dog1.equals(dog2));
+//        System.out.println(dog1.getName().equals(dog2.getName()));
+
     }
 
 
