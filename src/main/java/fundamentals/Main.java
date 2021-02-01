@@ -1,4 +1,5 @@
 package fundamentals;
+import java.util.Arrays;
 
 import java.util.Scanner;
 
@@ -9,7 +10,7 @@ public class Main {
 //        TasksExercises tasksExercises = new TasksExercises();
 //        tasksExercises.perimeter();
 //        TasksExercises.perimeter();
-        TasksExercises tasksExercises1= new TasksExercises();
+//        TasksExercises tasksExercises1= new TasksExercises();
 //        TasksExercises tasksExercises2= new TasksExercises();
 //        System.out.println("x= "+ tasksExercises1.x);
 //        System.out.println("y= "+ tasksExercises1.y);
@@ -32,7 +33,16 @@ public class Main {
 //        tasksExercises1.FizzBuzz1();
 //        tasksExercises1.longestWord2();
 //        tasksExercises1.stutters();
-        tasksExercises1.testObjects();
+//        tasksExercises1.testObjects();
+
+        ArrayExercises arrayExercises = new ArrayExercises();
+        arrayExercises.findMaxProduct();
+        arrayExercises.removeElement();
+
+
+
+
+
 
 
 
