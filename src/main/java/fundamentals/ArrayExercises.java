@@ -33,11 +33,49 @@ public class ArrayExercises {
 
         int removeIndex = scanner.nextInt();
 
-        for (int i = removeIndex ; i < myArray.length - 1; i++) {
+        for (int i = removeIndex; i < myArray.length - 1; i++) {
             myArray[i] = myArray[i + 1];
 
         }
         System.out.println("My array without removed element is: " + Arrays.toString(myArray));
+
+    }
+
+    public static void maxArrayNumber() {
+        int[] myArray = {1, 2, 3, 4, 5};
+        int max = myArray[0];
+
+//        for(int i = 0; i<=myArray.length-1;i=i+2){
+//            if (myArray[i]>max){
+//                max=myArray[i];
+//            }
+//            if (myArray[i] > myArray[i + 1]) {
+//                if (myArray[i] > max) max = myArray[i];
+//            }
+//            if (myArray[i] < myArray[i + 1]) {
+//                if (myArray[i + 1] > max) max = myArray[i + 1];
+//            }
+//
+//
+//        }
+//        System.out.println(" Original Array: "+Arrays.toString(myArray));
+//        System.out.println(" Maximum value for the above array = " + myArray);
+//
+//
+//
+//    }
+
+    }
+
+    public static void duplicateElement() {
+        String[] myArray = {"dog", "cat", "phone", "mouse", "dog", "keyboard"};
+
+        for (int i = 0; i < myArray.length-1 ; i++) {
+            for (int j = i+1; j < myArray.length; j++)
+                if (myArray[i].equals(myArray[j]) && (i != j)) {
+                    System.out.println("Duplicate element is : " + myArray[j]);
+                }
+        }
 
     }
 

@@ -1,4 +1,5 @@
 package fundamentals;
+
 import java.util.Arrays;
 
 import java.util.Scanner;
@@ -36,14 +37,17 @@ public class Main {
 //        tasksExercises1.testObjects();
 
         ArrayExercises arrayExercises = new ArrayExercises();
-        arrayExercises.findMaxProduct();
-        arrayExercises.removeElement();
+//        arrayExercises.findMaxProduct();
+//        arrayExercises.removeElement();
+//        arrayExercises.maxArrayNumber();
+//        arrayExercises.duplicateElement();
 
-
-
-
-
-
+        StringExercises stringExercises = new StringExercises();
+//        stringExercises.printGivenIndex();
+//        stringExercises.givenStringContains();
+//        stringExercises.replaceWithAnotherString();
+//        stringExercises.firstLetterUppercase();
+        stringExercises.compareStrings();
 
 
     }
