@@ -4,23 +4,26 @@ import java.util.Set;
 
     public class Group {
         private Trainer trainer;
-        private Set<Student> students1;
+        private Set<Student> students;
 
-        public Group(Trainer trainer, Set<Student> students1) {
+        public Group(Trainer trainer, Set<Student> students) {
             this.trainer = trainer;
-            this.students1 = students1;
+            if(students.size()<=5){
+                this.students = students;
+            }else{
+                throw new MaximumNumberOfStudentsReached("Number of students reached");
+
+
         }
 
-
-        public void setTrainer(Trainer trainer) {
-            this.trainer = trainer;
         }
+
 
         @Override
         public String toString() {
             return "Group{" +
                     " trainer=" + trainer +
-                    ", students=" + students1 +
+                    ", students=" + students +
                     '}';
         }
     }
