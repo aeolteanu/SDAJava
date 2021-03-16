@@ -3,12 +3,8 @@ import java.time.LocalDate;
 public class Student extends Person {
     private boolean hasPreviousJavaKnowledge;
 
-    public boolean isHasPreviousJavaKnowledge() {
-        return hasPreviousJavaKnowledge;
-    }
-
-    public void setHasPreviousJavaKnowledge(boolean hasPreviousJavaKnowledge) {
-        this.hasPreviousJavaKnowledge = hasPreviousJavaKnowledge;
+    public String getLastName(){
+        return super.getLastName();
     }
 
     public Student(String firstName, String lastName, LocalDate dateOfBirth, boolean hasPreviousJavaKnowledge) {

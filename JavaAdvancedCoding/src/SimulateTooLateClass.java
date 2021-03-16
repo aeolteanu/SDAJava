@@ -16,6 +16,9 @@ public class SimulateTooLateClass {
         printStudents();
         printTrainers();
         printGroups();
+        printStudentsAlphabetically();
+        showMaxNumberOfStudentsFromGroup_classicMethod();
+
     }
 
     private static void printGroups() {
@@ -28,6 +31,42 @@ public class SimulateTooLateClass {
 
     private static void printStudents() {
         System.out.println(students1);
+    }
+
+    private static void showMaxNumberOfStudentsFromGroup_classicMethod() {
+        Group aux = new Group(null, new LinkedHashSet<>());
+        for (Group group : groups) {
+            if (group.getStudents().size() > aux.getStudents().size()) {
+                aux = group;
+            }
+        }
+        System.out.println(aux);
+    }
+
+    private static void showMaxNumberOfStudentsFromGroup_functionalMethod() {
+
+    }
+    private static void printAllMaxNumberOfStudentsFromGroup_functionalMethod() {
+        List<Group> groupList = new ArrayList<>();
+        Group maxSizeGroup = new Group(null, new LinkedHashSet<>());
+        for (Group group : groups) {
+            if (group.getStudents().size() > maxSizeGroup.getStudents().size()) {
+                maxSizeGroup = group;
+                groupList = new ArrayList<>();
+                groupList.add(group);
+            }else if(group.getStudents().size() == maxSizeGroup.getStudents().size()){
+
+        }
+        System.out.println("Max group size is:" + maxSizeGroup);
+    }
+    }
+
+
+    private static void printStudentsAlphabetically() {
+        students1.stream()
+                .sorted(Comparator.comparing(student -> student.getLastName()))
+//              .forEach(student -> System.out.println(student));
+                .forEach(System.out::println);
     }
 
     private static void createClass() {
@@ -66,7 +105,7 @@ public class SimulateTooLateClass {
         Student student8 = new Student("xcvsfqe", "Alexandru", LocalDate.of(1998, Month.OCTOBER, 12), false);
         Student student9 = new Student("sadzcxv", "Alexandru", LocalDate.of(1998, Month.OCTOBER, 12), false);
         Student student10 = new Student("fjasdhkj", "Alexandru", LocalDate.of(1998, Month.OCTOBER, 12), false);
-        students1 = new HashSet<>();
+        students1 = new LinkedHashSet<>();
         students1.add(student1);
         students1.add(student2);
         students1.add(student3);
@@ -79,22 +118,22 @@ public class SimulateTooLateClass {
         students1.add(student10);
 
 
-        studentsRo16 = new HashSet<>();
+        studentsRo16 = new LinkedHashSet<>();
         studentsRo16.add(student1);
         studentsRo16.add(student2);
         studentsRo16.add(student3);
 
 
-        studentsRo17 = new HashSet<>();
+        studentsRo17 = new LinkedHashSet<>();
         studentsRo17.add(student4);
         studentsRo17.add(student5);
 
-        studentsRo18 = new HashSet<>();
+        studentsRo18 = new LinkedHashSet<>();
         studentsRo18.add(student6);
         studentsRo18.add(student7);
         studentsRo18.add(student8);
 
-        studentsRo19 = new HashSet<>();
+        studentsRo19 = new LinkedHashSet<>();
         studentsRo19.add(student9);
         studentsRo19.add(student10);
     }
