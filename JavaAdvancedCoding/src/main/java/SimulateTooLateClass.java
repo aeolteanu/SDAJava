@@ -2,6 +2,7 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.time.Period;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class SimulateTooLateClass {
     private static Set<Student> students;
@@ -9,6 +10,17 @@ public class SimulateTooLateClass {
     private static List<Group> groups;
     private static Set<Student> studentsRo16, studentsRo17, studentsRo18, studentsRo19;
     private static Trainer trainer1, trainer2, trainer3;
+
+    private static String getLongestString(String... longestStringArray) {
+
+        String auxString = "";
+        for (String element : longestStringArray) {
+            if (element.length() > auxString.length()) {
+                auxString = element;
+            }
+        }
+        return auxString;
+    }
 
     public static void main(String[] args) {
         createClassHierarchy();
@@ -27,36 +39,39 @@ public class SimulateTooLateClass {
         }
 
 
-        displayGroupWithMaxNumOfStudent_FunctionalMethod();
-        displayGroupWithMinNumOfStudent_FunctionalMethod();
+//        displayGroupWithMaxNumOfStudent_FunctionalMethod();
+//        displayGroupWithMinNumOfStudent_FunctionalMethod();
 
         //-----------------------------------
 
-        studentsYoungerThan(25);
-        displayStudentsYoungerThan(25);
+//        studentsYoungerThan(25);
+//        displayStudentsYoungerThan(25);
 
         //-----------------------------------
 
-        studentsGroupedByTrainer_WithGroups();
-
-        studentsGroupedByTrainer_WithMAp(); //Functioneaza daca nu fac modificari in grupuri
+//        studentsGroupedByTrainer_WithGroups();
+//
+//        studentsGroupedByTrainer_WithMAp(); //Functioneaza daca nu fac modificari in grupuri
 
         //-----------------------------------
 
-        displayStudentsWithPreviousJavaKnowledge();
-
-        dispGroupWithMaxNumOfStudentsWithNOJavaKnowledge();
-
-        dispGroupWithMaxNumOfStudentsWithNOJavaKnowledge2();
-
-        dispGroupWithMaxNumOfStudentsWithNOJavaKnowledge3();
-
-        dispGroupWithMaxNumOfStudentsWithNOJavaKnowledge4();
+//        displayStudentsWithPreviousJavaKnowledge();
+//
+//        dispGroupWithMaxNumOfStudentsWithNOJavaKnowledge();
+//
+//        dispGroupWithMaxNumOfStudentsWithNOJavaKnowledge2();
+//
+//        dispGroupWithMaxNumOfStudentsWithNOJavaKnowledge3();
+//
+//        dispGroupWithMaxNumOfStudentsWithNOJavaKnowledge4();
 
 //        removeStudentsYoungerThanFromGroups(25);
 //
 //        printStudentsAlphabeticallyByFirstName();
-        System.out.println("Triplul  " + tripleNumberOfStudentsFromMaxGroup(getAllGroupsWithMaxNumOfStudent_ClassicMethod()));
+//        System.out.println("Triplul  " + tripleNumberOfStudentsFromMaxGroup(getAllGroupsWithMaxNumOfStudent_ClassicMethod()));
+        getLongestString("Trainer", "Trainer", "Trainer123");
+        System.out.println(getLongestString("Trainer", "Trainer", "Trainer123"));
+
     }
 
     private static void printStudents() {
@@ -113,7 +128,7 @@ public class SimulateTooLateClass {
         System.out.println(maxGroup);
     }
 
-    private static List<Group> getAllGroupsWithMaxNumOfStudent_ClassicMethod() {
+    public static List<Group> getAllGroupsWithMaxNumOfStudent_ClassicMethod() {
         System.out.println("\n-----------------------------------");
 
         List<Group> maxGroupsList = new ArrayList<>();
@@ -190,12 +205,24 @@ public class SimulateTooLateClass {
                 .forEach(student -> System.out.print(student));
     }
 
-    private static void displayStudentsYoungerThan(int age) {
+    private static List<Student> displayStudentsYoungerThan(int age) {
         System.out.println("\n-----------------------------------");
         System.out.print("\nLista studentilor mai tineri decat " + age + " ani : ");
-        students.stream()
+        return students.parallelStream()
                 .filter(student -> student.getAge() < age)
-                .forEach(student -> System.out.print(student));
+                //                .forEach(student -> System.out.print(student));
+                .collect(Collectors.toList());
+
+    }
+
+    private static List<String> displayNameOfStudentsYoungerThan(int age) {
+        System.out.println("\n-----------------------------------");
+        System.out.print("\nLista studentilor mai tineri decat " + age + " ani : ");
+        return students.parallelStream()
+                .filter(student -> student.getAge() < age)
+                .map(student -> student.getLastName())
+                .collect(Collectors.toList());
+
     }
 
     private static void studentsGroupedByTrainer_WithGroups() {
@@ -227,6 +254,14 @@ public class SimulateTooLateClass {
     }
 
     private static void displayStudentsWithPreviousJavaKnowledge() {
+        System.out.println("\n-----------------------------------");
+        System.out.print("Lista studentilor care au cunostinte Java: ");
+        students.stream()
+                .filter(student -> (student != null&& student.isHasPreviousJavaKnowledge() ==true ))
+                .forEach(System.out::println);
+        }
+
+    private static void displayStudentsWithPreviousJavaKnowledge1() {
         System.out.println("\n-----------------------------------");
         System.out.print("Lista studentilor care au cunostinte Java: ");
         for (Student student : students) {
